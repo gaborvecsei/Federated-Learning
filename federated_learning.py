@@ -12,6 +12,7 @@ fed_learn.set_working_GPU(str(args.gpu))
 
 experiment_folder_path = Path(__file__).resolve().parent / "experiments" / args.name
 experiment = fed_learn.Experiment(experiment_folder_path, args.overwrite_experiment)
+experiment.serialize_args(args)
 
 tf_scalar_logger = experiment.create_scalar_logger()
 
